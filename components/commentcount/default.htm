@@ -1,1 +1,9 @@
-<div>Comments for page {{ this.page.id }}: 0</div>
+<div class='{{ __SELF__.property('containerClass') }}'>
+    <div class='{{ __SELF__.property('textBeforeClass') }}'>
+        {{ __SELF__.property('textBefore') }}
+    </div>
+    <div class='{{ __SELF__.property('valueClass') }}'>{{ __SELF__.value }}</div>
+    <div class='{{ __SELF__.property('textAfterClass') }}'>
+        {{ __SELF__.property('textAfter') }}
+    </div>    
+</div>

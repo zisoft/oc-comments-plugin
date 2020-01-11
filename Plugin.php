@@ -56,6 +56,11 @@ class Plugin extends PluginBase
         ];
     }
 
+    /**
+     * Registers any mail templates implemented in this plugin.
+     *
+     * @return array
+     */
     public function registerMailTemplates()
     {
         return [
