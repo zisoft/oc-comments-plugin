@@ -2,14 +2,15 @@
 
 use Cms\Classes\ComponentBase;
 use Zisoft\Comments\Models\Comment;
+use Lang;
 
 class CommentCount extends ComponentBase
 {
     public function componentDetails()
     {
         return [
-            'name'        => 'Comment Count',
-            'description' => 'Show the number of comments for a page'
+            'name'        => Lang::get('zisoft.comments::lang.commentcount.name'),
+            'description' => Lang::get('zisoft.comments::lang.commentcount.description')
         ];
     }
 
@@ -25,7 +26,7 @@ class CommentCount extends ComponentBase
             'textBefore' => [
                 'title'             => 'Text before value',
                 'description'       => 'The text before the value',
-                'default'           => 'Kommentare:',
+                'default'           => Lang::get('zisoft.comments::lang.commentcount.text_before'),
                 'type'              => 'string'
             ],
             'textBeforeClass' => [
@@ -43,7 +44,7 @@ class CommentCount extends ComponentBase
             'textAfter' => [
                 'title'             => 'Text after value',
                 'description'       => 'The text after the value',
-                'default'           => '',
+                'default'           => Lang::get('zisoft.comments::lang.commentcount.text_after'),
                 'type'              => 'string'
             ],
             'textAfterClass' => [

@@ -3,6 +3,7 @@
 use Cms\Classes\ComponentBase;
 use Zisoft\Comments\Models\Comment;
 
+use Lang;
 use Mail;
 use Validator;
 use ValidationException;
@@ -13,8 +14,8 @@ class Comments extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'Comments',
-            'description' => 'Show existing comments and a form to add a new comment'
+            'name'        => Lang::get('zisoft.comments::lang.comments.name'),
+            'description' => Lang::get('zisoft.comments::lang.comments.description')
         ];
     }
 
