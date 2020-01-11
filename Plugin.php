@@ -2,6 +2,7 @@
 
 use Backend;
 use System\Classes\PluginBase;
+use Lang;
 
 /**
  * comments Plugin Information File
@@ -16,8 +17,8 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'Comments',
-            'description' => 'Allow users to add comments to pages',
+            'name'        => Lang::get('zisoft.comments::lang.plugin.name'),
+            'description' => Lang::get('zisoft.comments::lang.plugin.description'),
             'author'      => 'Mario Zimmermann',
             'icon'        => 'icon-comments-o'
         ];

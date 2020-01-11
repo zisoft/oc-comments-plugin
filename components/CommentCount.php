@@ -9,7 +9,7 @@ class CommentCount extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => Lang::get('zisoft.comments::lang.commentcount.name'),
+            'name'        => Lang::get('zisoft.comments::lang.commentcount.component_name'),
             'description' => Lang::get('zisoft.comments::lang.commentcount.description')
         ];
     }
@@ -54,6 +54,11 @@ class CommentCount extends ComponentBase
                 'type'              => 'string'
             ]
         ];    
+    }
+
+    public function onRun()
+    {
+        $this->addCss('assets/css/commentcount.css');
     }
 
     public function value()

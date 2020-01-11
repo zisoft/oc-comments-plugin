@@ -1,0 +1,38 @@
+.zsc-comment-form {
+  margin: 1em 0;
+}
+
+.zsc-comment-form .form-control {
+  margin-bottom: 0.5em;
+}
+
+.zsc-comment-form .error {
+  height: 1.5em;
+  color: red;
+}
+
+.zsc-comment-form label {
+  display: block;
+}
+
+.zsc-comment-form input,
+.zsc-comment-form textarea {
+  width: 30em;
+  border-radius: 0.2em;
+  border: 1px solid #aaa;
+}
+
+.zsc-comment-form textarea {
+  height: 5em;
+}
+
+.zsc-comment-form button {
+  padding: 0.4em 1em;
+  border-radius: 0.3em;
+  border: 1px solid #aaa;
+  background-color: #ccc;
+}
+
+.zsc-comments-list {
+  background-color: gray;
+}

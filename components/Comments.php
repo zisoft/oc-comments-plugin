@@ -14,17 +14,32 @@ class Comments extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => Lang::get('zisoft.comments::lang.comments.name'),
+            'name'        => Lang::get('zisoft.comments::lang.comments.component_name'),
             'description' => Lang::get('zisoft.comments::lang.comments.description')
         ];
     }
 
     public function defineProperties()
     {
-        return [];
+        return [
+            'formClass' => [
+                'title'             => 'css class for the form',
+                'description'       => 'The css class for the form',
+                'default'           => 'zsc-comment-form',
+                'type'              => 'string'
+            ],
+            'commentListClass' => [
+                'title'             => 'css class for the list container',
+                'description'       => 'The css class for the comments list container',
+                'default'           => 'zsc-comments-list',
+                'type'              => 'string'
+            ],
+        ];
     }
 
     public function onRun() {
+        $this->addCss('assets/css/comments.css');
+
         $this->page['all_comments'] = Comment::where('page_id', $this->page->id)
             ->where('is_pending', false)
             ->orderBy('dt')
