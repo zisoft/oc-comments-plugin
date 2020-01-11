@@ -1,0 +1,35 @@
+{% framework extras %}
+
+<hr>
+
+<h2>zisoft Comments</h2>
+
+<form 
+    data-request="{{ __SELF__ }}::onPostComment"
+    data-request-validate
+>
+    <div>Hinterlasse einen Kommentar</div>
+    
+    <div>
+        <label for="comment-name">Name</label>
+        <input type="text" id="comment-name" name="comment-name">
+    </div>
+    
+    
+    <div>
+        <label for="comment-email">Email</label>
+        <input type="email" id="comment-email" name="comment-email">
+    </div>
+    
+    <div>
+        <label for="comment-text">Text</label>
+        <textarea id="comment-text" name="comment-text"></textarea>
+    </div>
+
+    <input type="hidden" name="page-id" value="{{ this.page.id }}">
+    
+    <div data-validate-error></div>
+    <button type="submit" data-attach-loading>Abschicken</button>
+</form>
+
+{% partial __SELF__ ~ '::commentslist' %}

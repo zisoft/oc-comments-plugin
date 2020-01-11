@@ -1,0 +1,4 @@
+1.0.1: First version of comments
+1.0.2:
+  - Create the comments database table
+  - create_comments_table.php
