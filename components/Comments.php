@@ -33,22 +33,9 @@ class Comments extends ComponentBase
     public function onPostComment()
     {
         // post parameters
-        $page_id = post('page-id');
         $name    = post('comment-name');
         $email   = post('comment-email');
         $text    = post('comment-text');
-
-        $mail_vars = [
-            'name' => 'Mario Zimmermann',
-            'email' => 'hugo@peng.de',
-            'text' => 'Dies ist der Kommentar'
-        ];
-        
-
-        Mail::sendTo('mail@zisoft.de', 'zisoft.comments::mail.new_comment', $mail_vars);
-        return;
-
-
 
         $validator = Validator::make(
             [
@@ -70,14 +57,21 @@ class Comments extends ComponentBase
         // save
         $comment = new Comment;
         $comment->dt = time();
-        $comment->page_id = $page_id;
+        $comment->page_id = $this->page->id;
         $comment->name = $name;
         $comment->email = $email;
         $comment->text = $text;
         $comment->save();
 
         // send email to administrator
+        $mail_vars = [
+            'name' => $name,
+            'email' => $email,
+            'text' => $text,
+            'page' => $this->page->title
+        ];
         
+        Mail::sendTo('mail@zisoft.de', 'zisoft.comments::mail.new_comment', $mail_vars);
     }
 
 }
