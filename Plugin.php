@@ -93,13 +93,11 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
-        return []; // Remove this line to activate
-
         return [
             'comments' => [
-                'label'       => 'comments',
-                'url'         => Backend::url('zisoft/comments/mycontroller'),
-                'icon'        => 'icon-leaf',
+                'label'       => Lang::get('zisoft.comments::lang.plugin.name'),
+                'url'         => Backend::url('zisoft/comments/comments'),
+                'icon'        => 'icon-comments-o',
                 'permissions' => ['zisoft.comments.*'],
                 'order'       => 500,
             ],

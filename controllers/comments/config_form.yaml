@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Comment
+
+# Model Form Field configuration
+form: $/zisoft/comments/models/comment/fields.yaml
+
+# Model Class name
+modelClass: Zisoft\Comments\Models\Comment
+
+# Default redirect location
+defaultRedirect: zisoft/comments/comments
+
+# Create page
+create:
+    title: Create Comment
+    redirect: zisoft/comments/comments/update/:id
+    redirectClose: zisoft/comments/comments
+
+# Update page
+update:
+    title: Edit Comment
+    redirect: zisoft/comments/comments
+    redirectClose: zisoft/comments/comments
+
+# Preview page
+preview:
+    title: Preview Comment

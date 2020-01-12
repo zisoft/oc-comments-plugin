@@ -5,6 +5,7 @@
   color: #666;
 }
 
-.zsc-commentcount-text-before {
+.zsc-commentcount-text-before,
+.zsc-commentcount-value {
   margin-right: 0.3em;
 }

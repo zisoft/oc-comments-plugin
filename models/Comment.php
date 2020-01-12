@@ -20,12 +20,29 @@ class Comment extends Model
      */ 
     public $timestamps = false;
 
+    /**
+     * @var array Attributes to be cast to Argon (Carbon) instances
+     */
     protected $dates = ['dt'];
+
 
     /**
      * @var array Validation rules
      */
     public $rules = [
+        'name'  => 'required',
+        'email' => 'required|email',
+        'text'  => 'required'
     ];
+
+
+
+    /**
+     * Scope a query to only include pending comments.
+     */
+    public function scopePending($query)
+    {
+        return $query->where('is_pending', 1);
+    }
 
 }

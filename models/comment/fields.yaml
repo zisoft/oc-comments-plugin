@@ -6,3 +6,26 @@ fields:
     id:
         label: ID
         disabled: true
+
+    parent_id:
+        label: Parent ID
+
+    page_id:
+        label: Page
+
+    dt:
+        label: Date
+        disabled: true
+
+    is_pending:
+        label: Pending
+
+    name:
+        label: Name
+
+    email:
+        label: Email
+
+    text:
+        label: Text
+

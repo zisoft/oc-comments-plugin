@@ -5,4 +5,28 @@
 columns:
     id:
         label: ID
+
+    parent_id:
+        label: Parent ID
+
+    page_id:
+        label: Page
         searchable: true
+
+    is_pending:
+        label: Pending
+
+    dt:
+        label: Date
+
+    name:
+        label: Name
+        searchable: true
+
+    email:
+        label: Email
+        searchable: true
+
+    text:
+        label: Text
+

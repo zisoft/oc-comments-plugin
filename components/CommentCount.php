@@ -9,8 +9,8 @@ class CommentCount extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => Lang::get('zisoft.comments::lang.commentcount.component_name'),
-            'description' => Lang::get('zisoft.comments::lang.commentcount.description')
+            'name'        => Lang::get('zisoft.comments::lang.component_commentcount.component_name'),
+            'description' => Lang::get('zisoft.comments::lang.component_commentcount.description')
         ];
     }
 
@@ -26,7 +26,7 @@ class CommentCount extends ComponentBase
             'textBefore' => [
                 'title'             => 'Text before value',
                 'description'       => 'The text before the value',
-                'default'           => Lang::get('zisoft.comments::lang.commentcount.text_before'),
+                'default'           => Lang::get('zisoft.comments::lang.component_commentcount.text_before'),
                 'type'              => 'string'
             ],
             'textBeforeClass' => [
@@ -44,7 +44,7 @@ class CommentCount extends ComponentBase
             'textAfter' => [
                 'title'             => 'Text after value',
                 'description'       => 'The text after the value',
-                'default'           => Lang::get('zisoft.comments::lang.commentcount.text_after'),
+                'default'           => Lang::get('zisoft.comments::lang.component_commentcount.text_after'),
                 'type'              => 'string'
             ],
             'textAfterClass' => [

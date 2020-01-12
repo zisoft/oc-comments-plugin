@@ -5,13 +5,13 @@ return [
         'name' => 'Comments',
         'description' => 'Allow users to add comments to pages'
     ],
-    'commentcount' => [
+    'component_commentcount' => [
         'name' => 'Comment Count',
         'description' => 'Show the number of comments for a page',
-        'text_before' => 'Comments:',
-        'text_after' => ''
+        'text_before' => '',
+        'text_after' => 'Comments'
     ],
-    'comments' => [
+    'component_comments' => [
         'name' => 'Comments',
         'description' => 'Show existing comments and a form to add a new comment',
         'header' => 'Leave a comment',

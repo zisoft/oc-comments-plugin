@@ -14,8 +14,8 @@ class Comments extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => Lang::get('zisoft.comments::lang.comments.component_name'),
-            'description' => Lang::get('zisoft.comments::lang.comments.description')
+            'name'        => Lang::get('zisoft.comments::lang.component_comments.component_name'),
+            'description' => Lang::get('zisoft.comments::lang.component_comments.description')
         ];
     }
 
