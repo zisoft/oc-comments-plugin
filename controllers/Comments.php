@@ -2,6 +2,7 @@
 
 use BackendMenu;
 use Backend\Classes\Controller;
+use System\Classes\SettingsManager;
 use Zisoft\Comments\Models\Comment;
 
 
@@ -25,6 +26,7 @@ class Comments extends Controller
         parent::__construct();
 
         BackendMenu::setContext('Zisoft.Comments', 'comments', 'comments');
+        SettingsManager::setContext('Zisoft.Comments', 'settings');
     }
 
     /**

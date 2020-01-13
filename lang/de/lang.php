@@ -5,6 +5,13 @@ return [
         'name' => 'Kommentare',
         'description' => 'Erlaubt Besuchern, einen Kommentar zu hinterlassen'
     ],
+    'settings' => [
+        'label' => 'Kommentare',
+        'description' => 'Einstellungen für die Kommentare',
+        'category' => 'Kommentare',
+        'require_approval' => 'Neue Kommentare müssen freigeschaltet werden',
+        'approval_email' => 'Empfänger-Adresse für Freischaltungsmail'
+    ],
     'components' => [
         'commentcount' => [
             'component_name' => 'Kommentarzähler',

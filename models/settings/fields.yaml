@@ -1,0 +1,13 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    require_approval:
+        label: zisoft.comments::lang.settings.require_approval
+        type: switch
+
+    approval_email:
+        label: zisoft.comments::lang.settings.approval_email
+        type: email
+

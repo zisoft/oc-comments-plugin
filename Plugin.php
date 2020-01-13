@@ -101,4 +101,23 @@ class Plugin extends PluginBase
             ],
         ];
     }
+
+    /**
+     * Registers back-end settings for this plugin.
+     *
+     * @return array
+     */
+    public function registerSettings()
+    {
+        return [
+            'settings' => [
+                'label'       => Lang::get('zisoft.comments::lang.settings.label'),
+                'description' => Lang::get('zisoft.comments::lang.settings.description'),
+                'category'    => Lang::get('zisoft.comments::lang.settings.category'),
+                'icon'        => 'icon-comments-o',
+                'class'       => 'Zisoft\Comments\Models\Settings',
+                'order'       => 500
+            ]
+        ];
+    }
 }

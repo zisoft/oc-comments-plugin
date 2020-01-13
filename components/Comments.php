@@ -2,11 +2,14 @@
 
 use Cms\Classes\ComponentBase;
 use Zisoft\Comments\Models\Comment;
+use Zisoft\Comments\Models\Settings;
 
 use Lang;
 use Mail;
 use Validator;
 use ValidationException;
+use Backend;
+
 
 
 class Comments extends ComponentBase
@@ -62,7 +65,7 @@ class Comments extends ComponentBase
             [
                 'name'  => 'required',
                 'email' => 'required|email',
-                'text'  => 'required|min:10'
+                'text'  => 'required'
             ]
         );
 
@@ -79,18 +82,22 @@ class Comments extends ComponentBase
         $comment->text = $text;
         $comment->save();
 
-        // send email to administrator
-        $mail_vars = [
-            'comment_id' => $comment->id,
-            'name' => $name,
-            'email' => $email,
-            'text' => $text,
-            'page' => $this->page->title,
-            'approve_url' => url("/backend/zisoft/comments/comments/approve?id=$comment->id"),
-            'delete_url' => url("/backend/zisoft/comments/comments/delete?id=$comment->id")
-        ];
-        
-        Mail::sendTo('mail@zisoft.de', 'zisoft.comments::mail.new_comment', $mail_vars);
+        if (Settings::get('require_approval', true)) {
+            // send email to administrator
+            $recipient = Settings::get('approval_email');
+
+            $mail_vars = [
+                'comment_id' => $comment->id,
+                'name' => $name,
+                'email' => $email,
+                'text' => $text,
+                'page' => $this->page->title,
+                'approve_url' => Backend::url("zisoft/comments/comments/approve?id=$comment->id"),
+                'delete_url' => Backend::url("zisoft/comments/comments/delete?id=$comment->id")
+            ];
+            
+            Mail::sendTo($recipient, 'zisoft.comments::mail.new_comment', $mail_vars);
+        }
     }
 
 }
