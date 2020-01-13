@@ -16,7 +16,18 @@ Text: {{ text }}
 <p>Seite: <strong>{{ page }}</strong></p>
 
 <p>
+    ID: {{ comment_id }}<br>
     Name: {{ name }}<br>
     Email: {{ email }}<br>
     Text: {{ text }}
 </p>
+
+<a href="{{ approve_url }}">
+    Kommentar freischalten!
+</a>
+
+<a href="{{ delete_url }}">
+    Kommentar löschen!
+</a>
+
+

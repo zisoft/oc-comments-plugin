@@ -30,6 +30,10 @@ class CreateCommentsTable extends Migration
             $comment->page_id = 'test';
             if ($i < 4) {
                 $comment->is_pending = false;
+
+                if ($i > 1) {
+                    $comment->parent_id = $i - 1;
+                }
             }
             $comment->name = 'Mario Zimmermann';
             $comment->email = 'mail@zisoft.de';

@@ -18,6 +18,8 @@ class Comments extends Controller
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
 
+    public $requiredPermissions = ['zisoft.comments.manage_comments'];
+
     public function __construct()
     {
         parent::__construct();
@@ -44,10 +46,23 @@ class Comments extends Controller
       * Approve a single comment
       */
     public function approve() {
-        $id = post('id');
-        $comment = Comment::find($id);
-        $comment->is_pending = false;
-        $comment->save();
+        if ($this->user->hasAccess('zisoft.comments.manage_comments')) {
+            $id = post('id');
+            $comment = Comment::find($id);
+            $comment->is_pending = false;
+            $comment->save();
+        }
+    }
+
+     /**
+      * Delete a single comment
+      */
+    public function delete() {
+        if ($this->user->hasAccess('zisoft.comments.manage_comments')) {
+            $id = post('id');
+            $comment = Comment::find($id);
+            $comment->delete();
+        }
     }
 }
 

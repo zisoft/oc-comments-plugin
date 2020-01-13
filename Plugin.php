@@ -76,12 +76,10 @@ class Plugin extends PluginBase
      */
     public function registerPermissions()
     {
-        return []; // Remove this line to activate
-
         return [
-            'zisoft.comments.some_permission' => [
+            'zisoft.comments.manage_comments' => [
                 'tab' => 'comments',
-                'label' => 'Some permission'
+                'label' => 'Manage comments'
             ],
         ];
     }

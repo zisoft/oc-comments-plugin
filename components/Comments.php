@@ -14,8 +14,8 @@ class Comments extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => Lang::get('zisoft.comments::lang.component_comments.component_name'),
-            'description' => Lang::get('zisoft.comments::lang.component_comments.description')
+            'name'        => Lang::get('zisoft.comments::lang.components.comments.component_name'),
+            'description' => Lang::get('zisoft.comments::lang.components.comments.description')
         ];
     }
 
@@ -81,10 +81,13 @@ class Comments extends ComponentBase
 
         // send email to administrator
         $mail_vars = [
+            'comment_id' => $comment->id,
             'name' => $name,
             'email' => $email,
             'text' => $text,
-            'page' => $this->page->title
+            'page' => $this->page->title,
+            'approve_url' => url("/backend/zisoft/comments/comments/approve?id=$comment->id"),
+            'delete_url' => url("/backend/zisoft/comments/comments/delete?id=$comment->id")
         ];
         
         Mail::sendTo('mail@zisoft.de', 'zisoft.comments::mail.new_comment', $mail_vars);

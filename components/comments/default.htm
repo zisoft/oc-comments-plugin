@@ -5,21 +5,21 @@
 data-request="{{ __SELF__ }}::onPostComment"
 data-request-validate
 >
-    <div>{{ 'zisoft.comments::lang.comments.header'|trans }}</div>
+    <div>{{ 'zisoft.comments::lang.components.comments.header'|trans }}</div>
     
     <div class="form-control">
-        <label for="comment-name">{{ 'zisoft.comments::lang.comments.name'|trans }}</label>
+        <label for="comment-name">{{ 'zisoft.comments::lang.components.comments.name'|trans }}</label>
         <input type="text" id="comment-name" name="comment-name">
     </div>
     
     
     <div class="form-control">
-        <label for="comment-email">{{ 'zisoft.comments::lang.comments.email'|trans }}</label>
+        <label for="comment-email">{{ 'zisoft.comments::lang.components.comments.email'|trans }}</label>
         <input type="email" id="comment-email" name="comment-email">
     </div>
     
     <div class="form-control">
-        <label for="comment-text">{{ 'zisoft.comments::lang.comments.text'|trans }}</label>
+        <label for="comment-text">{{ 'zisoft.comments::lang.components.comments.text'|trans }}</label>
         <textarea id="comment-text" name="comment-text"></textarea>
     </div>
 
@@ -27,7 +27,7 @@ data-request-validate
         <div data-validate-error></div>
     </div>
 
-    <button type="submit" data-attach-loading>{{ 'zisoft.comments::lang.comments.send'|trans }}</button>
+    <button type="submit" data-attach-loading>{{ 'zisoft.comments::lang.components.comments.send'|trans }}</button>
 </form>
 
 {% partial __SELF__ ~ '::commentslist' %}
