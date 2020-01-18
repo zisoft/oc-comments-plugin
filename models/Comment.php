@@ -7,6 +7,7 @@ use Model;
  */
 class Comment extends Model
 {
+    use \October\Rain\Database\Traits\SimpleTree;
     use \October\Rain\Database\Traits\Validation;
 
     /**

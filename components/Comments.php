@@ -10,8 +10,6 @@ use Validator;
 use ValidationException;
 use Backend;
 
-
-
 class Comments extends ComponentBase
 {
     public function componentDetails()
@@ -40,13 +38,9 @@ class Comments extends ComponentBase
         ];
     }
 
-    public function onRun() {
+    public function onRun()
+    {
         $this->addCss('assets/css/comments.css');
-
-        $this->page['all_comments'] = Comment::where('page_id', $this->page->id)
-            ->where('is_pending', false)
-            ->orderBy('dt')
-            ->get();
     }
 
     public function onPostComment()
@@ -98,6 +92,49 @@ class Comments extends ComponentBase
             
             Mail::sendTo($recipient, 'zisoft.comments::mail.new_comment', $mail_vars);
         }
+    }
+
+    public function commentslist()
+    {
+        $content = $this->processNode(null);
+
+        return $content;
+    }
+
+    protected function processNode($parent_id)
+    {
+        $html = "";
+        $first = true;
+
+        $comments = Comment::where('page_id', $this->page->id)
+                        ->where('is_pending', false)
+                        ->where('parent_id', $parent_id)
+                        ->orderBy('dt')
+                        ->get();
+
+        foreach ($comments as $comment) {
+            if ($first) {
+                $html .= $this->renderPartial('@_level_start.htm');
+            }
+
+            $html .= $this->renderPartial('@_item_start.htm');
+            $html .= $this->renderPartial('@_comment.htm', [
+                'id' => $comment->id,
+                'dt' => $comment->dt,
+                'name' => $comment->name,
+                'text' => $comment->text,
+                'gravatar' => 'https://www.gravatar.com/avatar/' . md5($comment->email)
+            ]);
+            $html .= $this->processNode($comment->id);
+            $html .= $this->renderPartial('@_item_end.htm');
+            $first = false;
+        }
+
+        if (!$first) {
+            $html .= $this->renderPartial('@_level_end.htm');
+        }
+
+        return $html;
     }
 
 }

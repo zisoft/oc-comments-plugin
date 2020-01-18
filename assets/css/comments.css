@@ -34,5 +34,36 @@
 }
 
 .zsc-comments-list {
-  background-color: gray;
+  margin-bottom: 1em;
+}
+
+.zsc-comments-list ul {
+  list-style-type: none;
+}
+
+.zsc-comments-list ul:first-child {
+  padding-left: 0;
+}
+
+.zsc-comment-header {
+  display: flex;
+  font-size: 0.8em;
+  margin-bottom: 0.5em;
+}
+
+.zsc-comment-gravatar {
+  margin-right: 0.5em;
+}
+
+.zsc-comment-name {
+  font-weight: bold;
+}
+
+.zsc-comment-dt {
+  font-style: italic;
+}
+
+.zsc-comment-text {
+  width: 30em;
+  margin-bottom: 1em;
 }
