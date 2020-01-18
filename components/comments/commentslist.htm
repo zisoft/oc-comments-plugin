@@ -1,5 +1,7 @@
-<div class="{{ __SELF__.property('commentListClass') }}"
-    <h3>Kommentare</h3>
+<div class="zsc-comments-list-header">
+    {{ 'zisoft.comments::lang.components.commentslist.header'|trans }}
+</div>
 
+<div class="zsc-comments-list">    
     {{ __SELF__.commentslist() | raw }}
 </div>

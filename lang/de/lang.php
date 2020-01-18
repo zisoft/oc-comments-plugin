@@ -21,12 +21,15 @@ return [
         ],
         'comments' => [
             'component_name' => 'Kommentare',
-            'description' => 'Zeigt existierende Kommentare und ein Formular für neue Kommentare',
+            'description' => 'Zeigt existierende Kommentare und ein Formular für einen neuen Kommentar',
             'header' => 'Hinterlasse einen Kommentar',
             'name' => 'Name',
             'email' => 'Email',
             'text' => 'Text',
             'send' => 'Kommentar abschicken'
+        ],
+        'commentslist' => [
+            'header' => 'Kommentare'
         ]
     ]
 ];

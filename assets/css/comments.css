@@ -2,6 +2,11 @@
   margin: 1em 0;
 }
 
+.zsc-comment-form-header {
+  border-top: 1px solid #aaa;
+  font-size: 1.2em;
+}
+
 .zsc-comment-form .form-control {
   margin-bottom: 0.5em;
 }
@@ -35,6 +40,9 @@
 
 .zsc-comments-list {
   margin-bottom: 1em;
+}
+
+.zsc-comments-list-header {
 }
 
 .zsc-comments-list ul {

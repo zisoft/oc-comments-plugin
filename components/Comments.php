@@ -22,20 +22,7 @@ class Comments extends ComponentBase
 
     public function defineProperties()
     {
-        return [
-            'formClass' => [
-                'title'             => 'css class for the form',
-                'description'       => 'The css class for the form',
-                'default'           => 'zsc-comment-form',
-                'type'              => 'string'
-            ],
-            'commentListClass' => [
-                'title'             => 'css class for the list container',
-                'description'       => 'The css class for the comments list container',
-                'default'           => 'zsc-comments-list',
-                'type'              => 'string'
-            ],
-        ];
+        return [];
     }
 
     public function onRun()
@@ -80,17 +67,19 @@ class Comments extends ComponentBase
             // send email to administrator
             $recipient = Settings::get('approval_email');
 
-            $mail_vars = [
-                'comment_id' => $comment->id,
-                'name' => $name,
-                'email' => $email,
-                'text' => $text,
-                'page' => $this->page->title,
-                'approve_url' => Backend::url("zisoft/comments/comments/approve?id=$comment->id"),
-                'delete_url' => Backend::url("zisoft/comments/comments/delete?id=$comment->id")
-            ];
-            
-            Mail::sendTo($recipient, 'zisoft.comments::mail.new_comment', $mail_vars);
+            if ($recipient != '') {
+                $mail_vars = [
+                    'comment_id' => $comment->id,
+                    'name' => $name,
+                    'email' => $email,
+                    'text' => $text,
+                    'page' => $this->page->title,
+                    'approve_url' => Backend::url("zisoft/comments/comments/approve?id=$comment->id"),
+                    'delete_url' => Backend::url("zisoft/comments/comments/delete?id=$comment->id")
+                ];
+                
+                Mail::sendTo($recipient, 'zisoft.comments::mail.new_comment', $mail_vars);
+            }
         }
     }
 
@@ -123,7 +112,7 @@ class Comments extends ComponentBase
                 'dt' => $comment->dt,
                 'name' => $comment->name,
                 'text' => $comment->text,
-                'gravatar' => 'https://www.gravatar.com/avatar/' . md5($comment->email)
+                'gravatar' => 'https://www.gravatar.com/avatar/' . md5(strtolower(trim($comment->email)))
             ]);
             $html .= $this->processNode($comment->id);
             $html .= $this->renderPartial('@_item_end.htm');

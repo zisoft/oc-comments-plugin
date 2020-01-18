@@ -27,6 +27,9 @@ return [
             'email' => 'Email',
             'text' => 'Text',
             'send' => 'Send comment'
+        ],
+        'commentslist' => [
+            'header' => 'Comments'
         ]
     ]
 ];

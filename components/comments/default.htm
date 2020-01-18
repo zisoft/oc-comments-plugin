@@ -1,11 +1,13 @@
 {% framework extras %}
 
 
-<form class="{{ __SELF__.property('formClass') }}"
+<form class="zsc-comment-form"
     data-request="{{ __SELF__ }}::onPostComment"
     data-request-validate
 >
-    <div>{{ 'zisoft.comments::lang.components.comments.header'|trans }}</div>
+    <div class="zsc-comment-form-header">
+        {{ 'zisoft.comments::lang.components.comments.header'|trans }}
+    </div>
     
     <div class="form-control">
         <label for="comment-name">{{ 'zisoft.comments::lang.components.comments.name'|trans }}</label>

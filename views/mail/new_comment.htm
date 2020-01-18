@@ -1,7 +1,7 @@
-subject = "Neuer Kommentar auf zisoft.de"
+subject = "Neuer Kommentar auf {{ url('/') }}"
 ==
 
-Auf zisoft.de wurde eine neuer Kommentar gepostet.
+Auf {{ url('/') }} wurde eine neuer Kommentar gepostet.
 
 Seite: {{ page }}
 
@@ -11,7 +11,7 @@ Text: {{ text }}
 
 ==
 
-<p>Auf zisoft.de wurde ein neuer Kommentar gepostet.</p>
+<p>Auf {{ url('/') }} wurde ein neuer Kommentar gepostet.</p>
 
 <p>Seite: <strong>{{ page }}</strong></p>
 
