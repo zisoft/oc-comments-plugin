@@ -1,6 +1,8 @@
 <?php Block::put('breadcrumb') ?>
     <ul>
-        <li><a href="<?= Backend::url('zisoft/comments/comments') ?>">Comment</a></li>
+        <li><a href="<?= Backend::url('zisoft/comments/comments') ?>">
+            <?= e(trans('zisoft.comments::lang.backend.form.name')) ?>
+        </a></li>
         <li><?= e($this->pageTitle) ?></li>
     </ul>
 <?php Block::endPut() ?>
@@ -22,7 +24,7 @@
                     data-hotkey="ctrl+s, cmd+s"
                     data-load-indicator="Saving comment..."
                     class="btn btn-primary">
-                    <u>S</u>ave
+                    <?= e(trans('backend::lang.form.save')) ?>
                 </button>
                 <button
                     type="button"
@@ -31,7 +33,7 @@
                     data-hotkey="ctrl+enter, cmd+enter"
                     data-load-indicator="Saving comment..."
                     class="btn btn-default">
-                    Save and Close
+                    <?= e(trans('backend::lang.form.save_and_close')) ?>
                 </button>
                 <button
                     type="button"
@@ -41,7 +43,10 @@
                     data-request-confirm="Delete this comment?">
                 </button>
                 <span class="btn-text">
-                    or <a href="<?= Backend::url('zisoft/comments/comments') ?>">Cancel</a>
+                    <?= e(trans('backend::lang.form.or')) ?>
+                    <a href="<?= Backend::url('zisoft/comments/comments') ?>">
+                        <?= e(trans('backend::lang.form.cancel')) ?>
+                    </a>
                 </span>
             </div>
         </div>

@@ -9,7 +9,7 @@ list: $/zisoft/comments/models/comment/columns.yaml
 modelClass: Zisoft\Comments\Models\Comment
 
 # List Title
-title: Manage Comments
+title: zisoft.comments::lang.backend.lists.list_title
 
 # Link URL for each record
 recordUrl: zisoft/comments/comments/update/:id

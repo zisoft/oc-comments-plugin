@@ -32,5 +32,33 @@ return [
         'commentslist' => [
             'header' => 'Kommentare'
         ]
+    ],
+    'backend' => [
+        'lists' => [
+            'list_title' => 'Kommentare verwalten',
+            'new_comment' => 'Neuer Kommentar',
+            'delete_selected' => 'Ausgewählte löschen',
+            'delete_confirm' => 'Sollen die ausgewählten Kommentare wirklich gelöscht werden?',
+            'approve_selected' => 'Ausgewählte freischalten',
+            'approve_confirm' => 'Ausgewählte Kommentare freischalten?',
+            'pending_only' => 'Nur freizuschaltende'
+        ],
+        'form' => [
+            'name' => 'Kommentar',
+            'create' => 'Kommentar erstellen',
+            'update' => 'Kommentar ändern',
+            'preview' => 'Kommentar-Vorschau'
+        ]
+    ],
+    'model' => [
+        'id' => 'ID',
+        'parent_id' => 'Eltern ID',
+        'page' => 'Seite',
+        'pending' => 'Wartet auf Freigabe',
+        'date' => 'Datum',
+        'name' => 'Name',
+        'email' => 'Email',
+        'text' => 'Text'
     ]
+
 ];

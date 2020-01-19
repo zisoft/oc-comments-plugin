@@ -16,16 +16,16 @@ defaultRedirect: zisoft/comments/comments
 
 # Create page
 create:
-    title: Create Comment
+    title: zisoft.comments::lang.backend.form.create
     redirect: zisoft/comments/comments/update/:id
     redirectClose: zisoft/comments/comments
 
 # Update page
 update:
-    title: Edit Comment
+    title: zisoft.comments::lang.backend.form.update
     redirect: zisoft/comments/comments
     redirectClose: zisoft/comments/comments
 
 # Preview page
 preview:
-    title: Preview Comment
+    title: zisoft.comments::lang.backend.form.preview

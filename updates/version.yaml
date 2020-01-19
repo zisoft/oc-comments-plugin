@@ -2,3 +2,7 @@
 1.0.2:
   - Create the comments database table
   - create_comments_table.php
+1.0.3:
+  - Implement 'ReplyTo' functionality
+1.0.4:
+  - Finished localizations (english/german)

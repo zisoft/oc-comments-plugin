@@ -32,5 +32,32 @@ return [
         'commentslist' => [
             'header' => 'Comments'
         ]
+    ],
+    'backend' => [
+        'lists' => [
+            'list_title' => 'Manage comments',
+            'new_comment' => 'New Comment',
+            'delete_selected' => 'Delete selected',
+            'delete_confirm' => 'Are you sure you want to delete the selected Comments?',
+            'approve_selected' => 'Approve selected',
+            'approve_confirm' => 'Are you sure you want to approve the selected Comments?',
+            'pending_only' => 'Pending only'
+        ],
+        'form' => [
+            'name' => 'Comment',
+            'create' => 'Create comment',
+            'update' => 'Update comment',
+            'preview' => 'Preview comment'
+        ]
+    ],
+    'model' => [
+        'id' => 'ID',
+        'parent_id' => 'Parent ID',
+        'page' => 'Page',
+        'pending' => 'Pending',
+        'date' => 'Date',
+        'name' => 'Name',
+        'email' => 'Email',
+        'text' => 'Text'
     ]
 ];

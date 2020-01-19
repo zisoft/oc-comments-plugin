@@ -4,29 +4,29 @@
 
 columns:
     id:
-        label: ID
+        label: zisoft.comments::lang.model.id
 
     parent_id:
-        label: Parent ID
+        label: zisoft.comments::lang.model.parent_id
 
     page_id:
-        label: Page
+        label: zisoft.comments::lang.model.page
         searchable: true
 
     is_pending:
-        label: Pending
+        label: zisoft.comments::lang.model.pending
 
     dt:
-        label: Date
+        label: zisoft.comments::lang.model.date
 
     name:
-        label: Name
+        label: zisoft.comments::lang.model.name
         searchable: true
 
     email:
-        label: Email
+        label: zisoft.comments::lang.model.email
         searchable: true
 
     text:
-        label: Text
+        label: zisoft.comments::lang.model.text
 

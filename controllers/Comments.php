@@ -32,7 +32,8 @@ class Comments extends Controller
     /**
      * Approve (set is_pending = 0) comments
      */
-    public function onApprove() {
+    public function onApprove()
+    {
         $checked_ids = post('checked');
         
         foreach ($checked_ids as $id) {
@@ -47,7 +48,8 @@ class Comments extends Controller
      /**
       * Approve a single comment
       */
-    public function approve() {
+    public function approve()
+    {
         if ($this->user->hasAccess('zisoft.comments.manage_comments')) {
             $id = post('id');
             $comment = Comment::find($id);

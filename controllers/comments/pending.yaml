@@ -1,6 +1,6 @@
 scopes:
   published:
-      label: Pending only
+      label: zisoft.comments::lang.backend.lists.pending_only
       type: checkbox
       default: 1
       conditions: is_pending <> false
