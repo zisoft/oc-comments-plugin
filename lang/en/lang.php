@@ -26,7 +26,8 @@ return [
             'name' => 'Name',
             'email' => 'Email',
             'text' => 'Text',
-            'send' => 'Send comment'
+            'send' => 'Send comment',
+            'comment_sent' => 'Thank you! Your comment is awaiting approval'
         ],
         'commentslist' => [
             'header' => 'Comments'

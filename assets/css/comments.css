@@ -53,6 +53,10 @@
   padding-left: 0;
 }
 
+.zsc-comment {
+  margin-bottom: 1em;
+}
+
 .zsc-comment-header {
   display: flex;
   font-size: 0.8em;
@@ -73,5 +77,14 @@
 
 .zsc-comment-text {
   width: 30em;
-  margin-bottom: 1em;
+  white-space: pre-wrap;
+}
+
+.zsc-comment-reply {
+  font-size: 0.8em;
+}
+
+.zsc-comment-sent {
+  font-weight: bold;
+  color: #f00;
 }

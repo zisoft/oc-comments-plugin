@@ -26,7 +26,8 @@ return [
             'name' => 'Name',
             'email' => 'Email',
             'text' => 'Text',
-            'send' => 'Kommentar abschicken'
+            'send' => 'Kommentar abschicken',
+            'comment_sent' => 'Vielen Dank! Dein Kommentar wartet auf Freigabe.'
         ],
         'commentslist' => [
             'header' => 'Kommentare'

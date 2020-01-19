@@ -28,14 +28,21 @@ class Comments extends ComponentBase
     public function onRun()
     {
         $this->addCss('assets/css/comments.css');
+        $this->page['require_approval'] = Settings::get('require_approval', true);
     }
 
     public function onPostComment()
     {
         // post parameters
-        $name    = post('comment-name');
-        $email   = post('comment-email');
-        $text    = post('comment-text');
+        $name      = post('comment-name');
+        $email     = post('comment-email');
+        $text      = post('comment-text');
+        $parent_id = post('comment-reply-to');
+
+        $parent_id = (int) $parent_id;
+        if ($parent_id == 0) {
+            $parent_id = null;
+        }
 
         $validator = Validator::make(
             [
@@ -53,17 +60,21 @@ class Comments extends ComponentBase
         if ($validator->fails()) {
             throw new ValidationException($validator);
         }
+
+        $require_approval = Settings::get('require_approval', true);
      
         // save
         $comment = new Comment;
+        $comment->parent_id = $parent_id;
         $comment->dt = time();
         $comment->page_id = $this->page->id;
+        $comment->is_pending = $require_approval;
         $comment->name = $name;
         $comment->email = $email;
         $comment->text = $text;
         $comment->save();
 
-        if (Settings::get('require_approval', true)) {
+        if ($require_approval) {
             // send email to administrator
             $recipient = Settings::get('approval_email');
 
