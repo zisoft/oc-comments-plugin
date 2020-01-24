@@ -25,6 +25,7 @@ return [
             'header' => 'Hinterlasse einen Kommentar',
             'name' => 'Name',
             'email' => 'Email',
+            'email_not_publish' => '(wird nicht veröffentlicht)',
             'text' => 'Text',
             'send' => 'Kommentar abschicken',
             'comment_sent' => 'Vielen Dank! Dein Kommentar wartet auf Freigabe.'

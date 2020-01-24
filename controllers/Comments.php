@@ -1,6 +1,8 @@
 <?php namespace Zisoft\Comments\Controllers;
 
 use BackendMenu;
+use Request;
+use Redirect;
 use Backend\Classes\Controller;
 use System\Classes\SettingsManager;
 use Zisoft\Comments\Models\Comment;
@@ -56,6 +58,8 @@ class Comments extends Controller
             $comment->is_pending = false;
             $comment->save();
         }
+
+        return Redirect::to(post('url'));
     }
 
      /**
@@ -67,7 +71,7 @@ class Comments extends Controller
             $comment = Comment::find($id);
             $comment->delete();
         }
+
+        return Redirect::to(post('url'));
     }
 }
-
-

@@ -85,8 +85,9 @@ class Comments extends ComponentBase
                     'email' => $email,
                     'text' => $text,
                     'page' => $this->page->title,
-                    'approve_url' => Backend::url("zisoft/comments/comments/approve?id=$comment->id"),
-                    'delete_url' => Backend::url("zisoft/comments/comments/delete?id=$comment->id")
+                    'url' => $this->page->url,
+                    'approve_url' => Backend::url("zisoft/comments/comments/approve?id=$comment->id&url=" . $this->page->url),
+                    'delete_url' => Backend::url("zisoft/comments/comments/delete?id=$comment->id&url=" . $this->page->url)
                 ];
                 
                 Mail::sendTo($recipient, 'zisoft.comments::mail.new_comment', $mail_vars);
@@ -96,9 +97,7 @@ class Comments extends ComponentBase
 
     public function commentslist()
     {
-        $content = $this->processNode(null);
-
-        return $content;
+        return $this->processNode(null);
     }
 
     protected function processNode($parent_id)

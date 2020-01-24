@@ -6,3 +6,5 @@
   - Implement 'ReplyTo' functionality
 1.0.4:
   - Finished localizations (english/german)
+1.0.5:
+  - Mail template for approval emails

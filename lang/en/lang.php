@@ -25,6 +25,7 @@ return [
             'header' => 'Leave a comment',
             'name' => 'Name',
             'email' => 'Email',
+            'email_not_publish' => '(will not be published)',
             'text' => 'Text',
             'send' => 'Send comment',
             'comment_sent' => 'Thank you! Your comment is awaiting approval'

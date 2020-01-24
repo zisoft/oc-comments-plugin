@@ -24,7 +24,10 @@
         
         
         <div class="form-control">
-            <label for="zsc-comment-email">{{ 'zisoft.comments::lang.components.comments.email'|trans }}</label>
+            <label for="zsc-comment-email">
+                {{ 'zisoft.comments::lang.components.comments.email'|trans }}
+                <small>{{ 'zisoft.comments::lang.components.comments.email_not_publish'|trans }}</small>
+            </label>
             <input type="email" id="zsc-comment-email" name="comment-email">
         </div>
         

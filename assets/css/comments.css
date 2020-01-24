@@ -1,5 +1,7 @@
 .zsc-comment-form {
   margin: 1em 0;
+  width: 100%;
+  max-width: 30em;
 }
 
 .zsc-comment-form-header {
@@ -22,7 +24,7 @@
 
 .zsc-comment-form input,
 .zsc-comment-form textarea {
-  width: 30em;
+  width: 100%;
   border-radius: 0.2em;
   border: 1px solid #aaa;
 }
