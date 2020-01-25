@@ -22,25 +22,6 @@ class CreateCommentsTable extends Migration
             $table->string('email', 64);
             $table->string('text', 2000);
         });
-
-        // Testdatensätze erzeugen
-        for ($i = 1; $i <= 5; $i++) {
-            $comment = new Comment;
-            $comment->dt = time() - 3600 + $i*10;
-            $comment->page_id = 'test';
-            if ($i < 4) {
-                $comment->is_pending = false;
-
-                if ($i > 1) {
-                    $comment->parent_id = $i - 1;
-                }
-            }
-            $comment->name = 'Mario Zimmermann';
-            $comment->email = 'mail@zisoft.de';
-            $comment->text = "Dies ist Kommentar $i";
-            $comment->save();
-        }
-
     }
 
     public function down()
