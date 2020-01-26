@@ -1,0 +1,31 @@
+<div class="report-widget">
+    <h3><?= e(trans('zisoft.comments::lang.reportwidgets.label')) ?></h3>
+
+    <div class="table-container">
+        <table class="table data" data-provides="rowlink">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th class="list-cell-type-number"><span><?= e(trans('zisoft.comments::lang.reportwidgets.table_comments')) ?></span></th class="list-cell-type-number">
+                    <th class="list-cell-type-number"><span><?= e(trans('zisoft.comments::lang.reportwidgets.table_pending')) ?></span></th class="list-cell-type-number">
+                </tr>
+            </thead>
+            <tbody>
+                <?php 
+                    foreach($statistics as $row) {
+                        echo "<tr>";
+                        foreach($row as $index => $d) {
+                            if ($index == 0) {
+                                echo "<td>$d</td>";
+                            }
+                            else {
+                                echo "<td class='list-cell-type-number'>$d</td>";
+                            }
+                        }
+                        echo "</tr>";
+                    }
+                ?>
+            </tbody>
+        </table>
+    </div>
+</div>

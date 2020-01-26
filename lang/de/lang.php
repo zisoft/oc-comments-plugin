@@ -49,6 +49,9 @@ return [
             'create' => 'Kommentar erstellen',
             'update' => 'Kommentar ändern',
             'preview' => 'Kommentar-Vorschau'
+        ],
+        'permissions' => [
+            'label' => 'Manage Comments'
         ]
     ],
     'model' => [
@@ -60,6 +63,12 @@ return [
         'name' => 'Name',
         'email' => 'Email',
         'text' => 'Text'
+    ],
+    'reportwidgets' => [
+        'label' => 'Kommentar Statistiken',
+        'total' => 'Gesamt',
+        'table_comments' => 'Kommentare',
+        'table_pending' => 'Wartend'
     ]
 
 ];

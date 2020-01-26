@@ -11,12 +11,13 @@ external services required
 - Customizable mail template for approval
 - Approve/Delete comments directly from approval mail
 - Manage comments in the backend (create, edit, approve, delete)
+- Statistics widget for the dashboard
 
 ## Components
 The plugin comes with two components:
 
 ### Comments
-This component shows a (hierarchical) list of existing comments as well as a form to leave a new comment.
+This component shows a hierarchical list of existing comments as well as a form to leave a new comment.
 
 ### Comment Counter
 This component shows the number of existing comments for a page.

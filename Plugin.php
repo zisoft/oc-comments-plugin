@@ -79,7 +79,7 @@ class Plugin extends PluginBase
         return [
             'zisoft.comments.manage_comments' => [
                 'tab' => 'comments',
-                'label' => 'Manage comments'
+                'label' => Lang::get('zisoft.comments::lang.backend.permissions.label'),
             ],
         ];
     }
@@ -117,6 +117,23 @@ class Plugin extends PluginBase
                 'icon'        => 'icon-comments-o',
                 'class'       => 'Zisoft\Comments\Models\Settings',
                 'order'       => 500
+            ]
+        ];
+    }
+
+
+    /**
+     * Registers back-end report widgets for this plugin.
+     *
+     * @return array
+     */
+    public function registerReportWidgets()
+    {
+        return [
+            'Zisoft\Comments\ReportWidgets\CommentsStatistics' => [
+                'label'   => Lang::get('zisoft.comments::lang.reportwidgets.label'),
+                'context' => 'dashboard',
+                'permissions' => ['zisoft.comments.*']
             ]
         ];
     }
