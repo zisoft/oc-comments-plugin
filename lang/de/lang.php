@@ -68,7 +68,8 @@ return [
         'label' => 'Kommentar Statistiken',
         'total' => 'Gesamt',
         'table_comments' => 'Kommentare',
-        'table_pending' => 'Wartend'
+        'table_pending' => 'Wartend',
+        'maxrows' => 'Max. Anzahl Zeilen'
     ]
 
 ];

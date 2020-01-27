@@ -68,7 +68,8 @@ return [
         'label' => 'Comments Statistics',
         'total' => 'Total',
         'table_comments' => 'Comments',
-        'table_pending' => 'Pending'
+        'table_pending' => 'Pending',
+        'maxrows' => 'Max. number of rows to display'
     ]
 
 ];

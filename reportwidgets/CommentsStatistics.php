@@ -7,8 +7,22 @@ use Lang;
 
 class CommentsStatistics extends ReportWidgetBase
 {
+    public function defineProperties()
+    {
+        return [
+            'maxRows' => [
+                'title'             => Lang::get('zisoft.comments::lang.reportwidgets.maxrows'),
+                'default'           => '10',
+                'type'              => 'string',
+                'validationPattern' => '^[0-9]+$'
+            ]
+        ];
+    }    
+
     public function render()
     {
+        $maxrows = $this->property('maxRows') - 1;
+        
         $total_comments = Comment::all()->count();
         $pending_comments = Comment::where('is_pending', true)->count();
 
@@ -24,7 +38,7 @@ class CommentsStatistics extends ReportWidgetBase
             ->select(Db::raw('url, count(*) as comment_count, count(case when is_pending=1 then 1 else null end) as pending_count'))
             ->groupBy('url')
             ->orderBy('comment_count', 'desc')
-            ->take(10)
+            ->take($maxrows)
             ->get();
 
         foreach ($rows as $row) {

@@ -9,4 +9,6 @@
 1.0.5:
   - Mail template for approval emails
 1.0.6:
-  - Add Report Widget
+  - Add report widget
+1.0.7:
+  - Add properties to report widget
