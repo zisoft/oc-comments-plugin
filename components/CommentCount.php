@@ -26,7 +26,7 @@ class CommentCount extends ComponentBase
 
     public function value()
     {
-        return Comment::where('page_id', $this->page->id)
+        return Comment::where('url', $this->page->url)
             ->where('is_pending', false)
             ->count();
     }

@@ -12,11 +12,22 @@
             </thead>
             <tbody>
                 <?php 
-                    foreach($statistics as $row) {
-                        echo "<tr>";
+                    foreach($statistics as $rownum => $row) {
+                        if ($rownum == 0) {
+                            echo "<tr class='important'>";
+                        }
+                        else {
+                            echo "<tr>";
+                        }
+
                         foreach($row as $index => $d) {
                             if ($index == 0) {
-                                echo "<td>$d</td>";
+                                if ($rownum == 0) {
+                                    echo "<td>$d</td>";
+                                }
+                                else {
+                                    echo "<td><a target='_blank' href='" . url('/') . "/$d'>$d</a></td>";
+                                }
                             }
                             else {
                                 echo "<td class='list-cell-type-number'>$d</td>";

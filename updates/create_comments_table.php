@@ -15,7 +15,7 @@ class CreateCommentsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('parent_id')->nullable()->unsigned();
-            $table->string('page_id')->index();
+            $table->string('url')->index();
             $table->dateTime('dt');
             $table->boolean('is_pending')->default(true);
             $table->string('name', 64);

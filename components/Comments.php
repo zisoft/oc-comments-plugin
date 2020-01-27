@@ -67,7 +67,7 @@ class Comments extends ComponentBase
         $comment = new Comment;
         $comment->parent_id = $parent_id;
         $comment->dt = time();
-        $comment->page_id = $this->page->id;
+        $comment->url = $this->page->url;
         $comment->is_pending = $require_approval;
         $comment->name = $name;
         $comment->email = $email;
@@ -105,7 +105,7 @@ class Comments extends ComponentBase
         $html = "";
         $first = true;
 
-        $comments = Comment::where('page_id', $this->page->id)
+        $comments = Comment::where('url', $this->page->url)
                         ->where('is_pending', false)
                         ->where('parent_id', $parent_id)
                         ->orderBy('dt')

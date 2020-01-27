@@ -9,8 +9,8 @@ columns:
     parent_id:
         label: zisoft.comments::lang.model.parent_id
 
-    page_id:
-        label: zisoft.comments::lang.model.page
+    url:
+        label: zisoft.comments::lang.model.url
         searchable: true
 
     is_pending:

@@ -57,7 +57,7 @@ return [
     'model' => [
         'id' => 'ID',
         'parent_id' => 'Eltern ID',
-        'page' => 'Seite',
+        'url' => 'URL',
         'pending' => 'Wartet auf Freigabe',
         'date' => 'Datum',
         'name' => 'Name',

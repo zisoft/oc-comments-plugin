@@ -21,14 +21,14 @@ class CommentsStatistics extends ReportWidgetBase
         ];
 
         $rows = Db::table('zisoft_comments_comments')
-            ->select(Db::raw('page_id, count(*) as comment_count, count(case when is_pending=1 then 1 else null end) as pending_count'))
-            ->groupBy('page_id')
+            ->select(Db::raw('url, count(*) as comment_count, count(case when is_pending=1 then 1 else null end) as pending_count'))
+            ->groupBy('url')
             ->orderBy('comment_count', 'desc')
             ->take(10)
             ->get();
 
         foreach ($rows as $row) {
-            array_push($data, [$row->page_id, $row->comment_count, $row->pending_count]);
+            array_push($data, [$row->url, $row->comment_count, $row->pending_count]);
         }
 
         return $this->makePartial('commentsstatistics', [
