@@ -9,6 +9,7 @@ class Comment extends Model
 {
     use \October\Rain\Database\Traits\SimpleTree;
     use \October\Rain\Database\Traits\Validation;
+    use \October\Rain\Database\Traits\Nullable;
 
     /**
      * @var string The database table used by the model.
@@ -26,6 +27,10 @@ class Comment extends Model
      */
     protected $dates = ['dt'];
 
+    /**
+     * @var array Nullable attributes.
+     */
+    protected $nullable = ['parent_id'];
 
     /**
      * @var array Validation rules

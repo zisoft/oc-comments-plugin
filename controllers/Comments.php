@@ -7,7 +7,6 @@ use Backend\Classes\Controller;
 use System\Classes\SettingsManager;
 use Zisoft\Comments\Models\Comment;
 
-
 /**
  * Comments Back-end Controller
  */
@@ -52,26 +51,30 @@ class Comments extends Controller
       */
     public function approve()
     {
+        $id = \Request::query('id'); 
+        $url = \Request::query('url'); 
+
         if ($this->user->hasAccess('zisoft.comments.manage_comments')) {
-            $id = post('id');
             $comment = Comment::find($id);
             $comment->is_pending = false;
             $comment->save();
         }
 
-        return Redirect::to(post('url'));
+        return Redirect::to($url);
     }
 
      /**
       * Delete a single comment
       */
     public function delete() {
+        $id = \Request::query('id'); 
+        $url = \Request::query('url'); 
+
         if ($this->user->hasAccess('zisoft.comments.manage_comments')) {
-            $id = post('id');
             $comment = Comment::find($id);
             $comment->delete();
         }
 
-        return Redirect::to(post('url'));
+        return Redirect::to($url);
     }
 }
