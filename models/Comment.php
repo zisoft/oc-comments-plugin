@@ -51,4 +51,15 @@ class Comment extends Model
         return $query->where('is_pending', 1);
     }
 
+    
+    /**
+     * Set parent_id 0 to null
+     */
+    public function beforeSave()
+    {
+        if ($this->parent_id == 0) {
+            $this->parent_id = null;
+        }
+    }
+
 }
