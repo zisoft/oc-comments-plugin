@@ -19,13 +19,15 @@ fields:
 
     is_pending:
         label: zisoft.comments::lang.model.pending
+        type: checkbox
 
     name:
         label: zisoft.comments::lang.model.name
 
     email:
         label: zisoft.comments::lang.model.email
+        type: email
 
     text:
         label: zisoft.comments::lang.model.text
-
+        type: textarea
