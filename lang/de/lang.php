@@ -10,7 +10,9 @@ return [
         'description' => 'Einstellungen für die Kommentare',
         'category' => 'Kommentare',
         'require_approval' => 'Neue Kommentare müssen freigeschaltet werden',
-        'approval_email' => 'Empfänger-Adresse für Freischaltungsmail'
+        'approval_email' => 'Empfänger-Adresse für Freischaltungsmail',
+        'quickreply_email' => 'Email-Adresse für die Schnellantwort',
+        'quickreply_name' => 'Name für die Schnellantwort'
     ],
     'components' => [
         'commentcount' => [

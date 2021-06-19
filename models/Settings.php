@@ -22,5 +22,6 @@ class Settings extends Model
      */
     public $rules = [
         'approval_email' => 'email',
+        'quickreply_email' => 'email'
     ];    
 }

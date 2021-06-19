@@ -77,7 +77,8 @@ class Comments extends ComponentBase
         if ($require_approval) {
             // send email to administrator
             $recipient = Settings::get('approval_email');
-
+            
+            // 'approve_url' => Backend::url("zisoft/comments/comments/approve?id=$comment->id&url=" . $this->page->url),
             if ($recipient != '') {
                 $mail_vars = [
                     'comment_id' => $comment->id,
@@ -86,7 +87,7 @@ class Comments extends ComponentBase
                     'text' => $text,
                     'page' => $this->page->title,
                     'url' => $this->page->url,
-                    'approve_url' => Backend::url("zisoft/comments/comments/approve?id=$comment->id&url=" . $this->page->url),
+                    'approve_url' => Backend::url("zisoft/comments/comments/approve"),
                     'delete_url' => Backend::url("zisoft/comments/comments/delete?id=$comment->id&url=" . $this->page->url)
                 ];
                 

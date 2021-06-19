@@ -5,6 +5,7 @@ use Request;
 use Redirect;
 use Backend\Classes\Controller;
 use System\Classes\SettingsManager;
+use Zisoft\Comments\Models\Settings;
 use Zisoft\Comments\Models\Comment;
 
 /**
@@ -51,15 +52,28 @@ class Comments extends Controller
       */
     public function approve()
     {
-        $id = \Request::query('id'); 
-        $url = \Request::query('url'); 
+        $id = \Request::input('id'); 
+        $url = \Request::input('url'); 
+        $quickreply = \Request::input('quickreply'); 
 
         if ($this->user->hasAccess('zisoft.comments.manage_comments')) {
             $comment = Comment::find($id);
             $comment->is_pending = false;
             $comment->save();
+            
+            if ($quickreply) {
+                $reply_comment = new Comment;
+                $reply_comment->parent_id = $id;
+                $reply_comment->dt = time();
+                $reply_comment->url = $url;
+                $reply_comment->is_pending = false;
+                $reply_comment->name = Settings::get('quickreply_name');
+                $reply_comment->email = Settings::get('quickreply_email');
+                $reply_comment->text = $quickreply;
+                $reply_comment->save();
+            }
         }
-
+            
         return Redirect::to($url);
     }
 

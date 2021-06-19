@@ -29,10 +29,18 @@ description = "New comment mail"
     </tr>
 </table>
 
+<form method='GET' action='{{ approve_url }}'>
+    <input type='hidden' name='id' value='{{ comment_id }}'>
+    <input type='hidden' name='url' value='{{ url }}'>
+    <div>
+        <label>Quick Reply:</label>
+    </div>
+    <textarea name='quickreply' rows='4' cols='60'></textarea>
+    <div>
+        <button type='submit' class='button button-positive'>Approve comment!</button>
+    </div>
+</form>
 
-{% partial 'button' url=approve_url type='positive' body %}
-Approve comment!
-{% endpartial %}
 
 {% partial 'button' url=delete_url type='negative' body %}
 Delete comment!

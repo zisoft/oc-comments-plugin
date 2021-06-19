@@ -11,3 +11,11 @@ fields:
         label: zisoft.comments::lang.settings.approval_email
         type: email
 
+    quickreply_email:
+        label: zisoft.comments::lang.settings.quickreply_email
+        type: email
+
+    quickreply_name:
+        label: zisoft.comments::lang.settings.quickreply_name
+        type: text
+

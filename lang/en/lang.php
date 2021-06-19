@@ -10,7 +10,9 @@ return [
         'description' => 'Settings for the Comments plugin',
         'category' => 'Comments',
         'require_approval' => 'Wether new comments require approval by an adminstrator',
-        'approval_email' => 'Approval email address'
+        'approval_email' => 'Approval email address',
+        'quickreply_email' => 'Email-Adresse für die Schnellantwort',
+        'quickreply_name' => 'Name für die Schnellantwort'
     ],
     'components' => [
         'commentcount' => [
