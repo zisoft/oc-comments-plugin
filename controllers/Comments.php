@@ -53,12 +53,13 @@ class Comments extends Controller
     public function approve()
     {
         $id = \Request::input('id'); 
-        $url = \Request::input('url'); 
         $quickreply = \Request::input('quickreply'); 
+        $url = "/";
 
         if ($this->user->hasAccess('zisoft.comments.manage_comments')) {
             $comment = Comment::find($id);
             $comment->is_pending = false;
+            $url = $comment->url;
             $comment->save();
             
             if ($quickreply) {
@@ -82,13 +83,14 @@ class Comments extends Controller
       */
     public function delete() {
         $id = \Request::query('id'); 
-        $url = \Request::query('url'); 
+        $url = "/";
 
         if ($this->user->hasAccess('zisoft.comments.manage_comments')) {
             $comment = Comment::find($id);
+            $url = $comment->url;
             $comment->delete();
         }
-
+        
         return Redirect::to($url);
     }
 }

@@ -88,7 +88,7 @@ class Comments extends ComponentBase
                     'page' => $this->page->title,
                     'url' => $this->page->url,
                     'approve_url' => Backend::url("zisoft/comments/comments/approve"),
-                    'delete_url' => Backend::url("zisoft/comments/comments/delete?id=$comment->id&url=" . $this->page->url)
+                    'delete_url' => Backend::url("zisoft/comments/comments/delete?id=$comment->id")
                 ];
                 
                 Mail::sendTo($recipient, 'zisoft.comments::mail.new_comment', $mail_vars);
